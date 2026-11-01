@@ -27,7 +27,8 @@ A simple photo gallery web app built with React. It fetches photos from the Pics
 ## Getting Started
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/PriyaSingh7877/photo-gallery
+
 cd photo-gallery
 npm install
 npm run dev
