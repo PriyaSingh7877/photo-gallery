@@ -1,16 +1,36 @@
-# React + Vite
+# Photo Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple photo gallery web app built with React. It fetches photos from the Picsum Photos API, shows them in a responsive grid, lets users search by author name, and mark photos as favourites.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Fetches 30 photos from the Picsum Photos API, with a loading spinner and an error message
+- Responsive grid: 4 columns on desktop, 2 on tablet, 1 on mobile
+- Real-time search by author name (filters already-fetched data, no extra API call)
+- Favourite photos with a heart button, managed using `useReducer`
+- Favourites persist across page refreshes using `localStorage`
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (functional components and hooks)
+- Vite
+- Tailwind CSS
 
-## Expanding the ESLint configuration
+## React Concepts Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Custom hook: `useFetchPhotos` (returns `photos`, `loading`, `error`)
+- `useReducer` for favourites state
+- `useMemo` for the filtered photo list
+- `useCallback` for the search handler
+- `useEffect` for saving favourites to `localStorage`
+
+## Getting Started
+
+```bash
+git clone <your-repo-url>
+cd photo-gallery
+npm install
+npm run dev
+```
+
+Then open `http://localhost:5173` in your browser.
